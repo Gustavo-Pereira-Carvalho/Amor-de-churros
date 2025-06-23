@@ -49,38 +49,46 @@ nav {
   margin: 0 calc(-1 * var(--mobile-padding)); /* Compensação */
   width: calc(100% + 2 * var(--mobile-padding)); /* Compensação */
 }
+/* === NAVEGAÇÃO BRUTA (ESTILO ORIGINAL FORTE) === */
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 1.5rem; /* Espaço entre botões reduzido */
-  padding: 0.5rem 0; /* Padding vertical */
+  gap: 0; /* Sem espaçamento entre itens */
+  padding: 0;
+  margin: 0;
+  background: var(--dark); /* Fundo escuro */
+  border-top: 3px solid var(--accent); /* Linha dourada no topo */
+  border-bottom: 3px solid var(--accent); /* Linha dourada na base */
+}
+
+nav li {
+  flex: 1; /* Itens ocupam espaço igual */
+  text-align: center;
 }
 
 nav a {
+  display: block;
   text-decoration: none;
-  color: var(--dark);
-  font-weight: 600;
-  font-size: 1.1rem;
-  padding: 0.8rem 1.5rem; /* Botões mais largos */
-  border-radius: 50px; /* Bordas arredondadas */
-  background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
-  transition: all 0.3s ease;
-  display: inline-block;
-  border: 1px solid rgba(0, 0, 0, 0.05); /* Borda fina */
+  color: white !important; /* Texto branco */
+  font-weight: 700;
+  font-size: 1.2rem;
+  padding: 1rem 0;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: background 0.3s;
+  border-right: 2px solid rgba(255,255,255,0.1); /* Divisor entre itens */
+}
+
+nav li:last-child a {
+  border-right: none; /* Remove borda do último item */
 }
 
 nav a:hover {
-  background: white; /* Fundo sólido no hover */
-  transform: translateY(-2px); /* Efeito de levitar */
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-  color: var(--primary); /* Cor primária no hover */
+  background: var(--primary); /* Vermelho-tijolo no hover */
+  color: white !important;
 }
 
-nav a::after {
-  display: none; /* Remove a linha inferior original */
-}
 
 /* Banner - apenas compensação de margem */
 .banner {
