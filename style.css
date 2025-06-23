@@ -6,149 +6,95 @@
   --light: #F5EDE2;
   --text: #333333;
   --whatsapp: #25D366;
-  --mobile-padding: 1.2rem; /* Margem padrão para mobile */
+  --mobile-padding: 16px; /* Nova variável apenas para margens */
 }
 
-/* Reset Modernizado */
+/* Reset e Base (sem alterações) */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  -webkit-tap-highlight-color: transparent; /* Remove highlight no mobile */
 }
 
-html {
-  scroll-behavior: smooth;
-}
-
+/* Apenas adicionei padding lateral no body */
 body {
   font-family: 'Montserrat', sans-serif;
   background-color: var(--light);
   color: var(--text);
   line-height: 1.7;
-  padding: 0 var(--mobile-padding); /* Margens laterais essenciais */
-  overflow-x: hidden;
+  padding: 0 var(--mobile-padding); /* Única alteração nesta regra */
 }
 
-/* Container Principal */
-.main-container {
-  max-width: 1200px;
-  margin: 0 auto;
-  width: 100%;
-}
-
-/* Tipografia Responsiva */
-h1, h2, h3 {
-  font-family: 'Playfair Display', serif;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  margin-bottom: 1.2rem;
-}
-
-h1 { font-size: clamp(2rem, 5vw, 2.8rem); }
-h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); }
-h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); }
-
-/* Header Ajustado */
+/* Header - apenas compensação de margem */
 header {
   background: linear-gradient(135deg, var(--primary), var(--dark));
   color: white;
   text-align: center;
-  padding: 2rem var(--mobile-padding);
+  padding: 2.5rem 0;
   position: relative;
-  margin: 0 calc(-1 * var(--mobile-padding)); /* Compensa o padding do body */
-  width: calc(100% + 2 * var(--mobile-padding));
+  overflow: hidden;
+  margin: 0 calc(-1 * var(--mobile-padding)); /* Compensação */
+  width: calc(100% + 2 * var(--mobile-padding)); /* Compensação */
 }
 
-.logo {
-  font-size: clamp(2rem, 8vw, 2.8rem);
-  margin-bottom: 0.5rem;
-  text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-}
-
-/* Navegação Otimizada para Mobile */
+/* Navegação - apenas compensação de margem */
 nav {
-  background: rgba(255,255,255,0.97);
-  backdrop-filter: blur(8px);
-  padding: 1rem var(--mobile-padding);
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(5px);
+  padding: 1.2rem;
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 15px rgba(0,0,0,0.08);
-  margin: 0 calc(-1 * var(--mobile-padding));
-  width: calc(100% + 2 * var(--mobile-padding));
+  margin: 0 calc(-1 * var(--mobile-padding)); /* Compensação */
+  width: calc(100% + 2 * var(--mobile-padding)); /* Compensação */
 }
 
-nav ul {
-  display: flex;
-  justify-content: center;
-  list-style: none;
-  gap: clamp(1rem, 3vw, 3rem);
-  flex-wrap: wrap;
-}
-
-nav a {
-  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
-  padding: 0.5rem 0;
-}
-
-/* Banner com Margens Controladas */
+/* Banner - apenas compensação de margem */
 .banner {
-  height: clamp(300px, 60vh, 500px);
-  margin: 0 calc(-1 * var(--mobile-padding));
-  width: calc(100% + 2 * var(--mobile-padding));
+  height: 60vh;
+  min-height: 400px;
+  background: url('imagens/banner-churros-artesanal.jpg') center/cover fixed;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0 calc(-1 * var(--mobile-padding)); /* Compensação */
+  width: calc(100% + 2 * var(--mobile-padding)); /* Compensação */
 }
 
-/* Seções com Espaçamento Inteligente */
+/* Seções - apenas ajuste de padding lateral */
 .section {
-  padding: clamp(2rem, 6vw, 4rem) var(--mobile-padding);
+  padding: 4rem var(--mobile-padding); /* Alterado apenas o padding lateral */
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
+/* Cardápio - apenas ajuste de margem lateral */
 .cardapio-categoria {
-  padding: clamp(1.5rem, 4vw, 2.5rem);
-  margin: 1.5rem 0;
+  background: white;
+  border-radius: 12px;
+  padding: 2.5rem;
+  margin: 2rem 0; /* Alterado para remover margem automática */
+  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+  border: 1px solid rgba(0,0,0,0.03);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
 
-/* Botões Acessíveis */
-.btn {
-  min-width: 120px; /* Evita botões muito estreitos */
-  padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 4vw, 2.2rem);
-}
-
-/* Rodapé Ajustado */
+/* Rodapé - apenas compensação de margem */
 footer {
-  padding: 2rem var(--mobile-padding);
-  margin: 0 calc(-1 * var(--mobile-padding));
-  width: calc(100% + 2 * var(--mobile-padding));
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--dark);
+  color: white;
+  font-size: 0.9rem;
+  margin: 0 calc(-1 * var(--mobile-padding)); /* Compensação */
+  width: calc(100% + 2 * var(--mobile-padding)); /* Compensação */
 }
 
-/* Melhorias para Telas Muito Pequenas */
+/* Responsivo (apenas ajuste de margem para mobile pequeno) */
 @media (max-width: 480px) {
   :root {
-    --mobile-padding: 0.8rem;
-  }
-  
-  .section {
-    padding-top: 1.5rem;
-    padding-bottom: 1.5rem;
-  }
-  
-  .cardapio-categoria {
-    padding: 1.2rem;
-  }
-  
-  nav ul {
-    gap: 0.8rem;
-  }
-}
-
-/* Ajustes de Toque Final */
-@media (hover: hover) {
-  nav a:hover::after {
-    width: 100%;
-  }
-  
-  .btn:hover {
-    transform: translateY(-3px);
+    --mobile-padding: 12px; /* Margem menor para telas pequenas */
   }
 }
