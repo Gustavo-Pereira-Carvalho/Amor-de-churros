@@ -49,44 +49,43 @@ nav {
   margin: 0 calc(-1 * var(--mobile-padding)); /* Compensação */
   width: calc(100% + 2 * var(--mobile-padding)); /* Compensação */
 }
-/* === NAVEGAÇÃO BRUTA (ESTILO ORIGINAL FORTE) === */
+/* === NAVEGAÇÃO SIMPLES E LIMPA === */
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 0; /* Sem espaçamento entre itens */
-  padding: 0;
+  gap: 2rem; /* Espaço entre itens */
+  padding: 1rem 0; /* Espaço vertical */
   margin: 0;
-  background: var(--dark); /* Fundo escuro */
-  border-top: 3px solid var(--accent); /* Linha dourada no topo */
-  border-bottom: 3px solid var(--accent); /* Linha dourada na base */
-}
-
-nav li {
-  flex: 1; /* Itens ocupam espaço igual */
-  text-align: center;
 }
 
 nav a {
-  display: block;
   text-decoration: none;
-  color: white !important; /* Texto branco */
-  font-weight: 700;
-  font-size: 1.2rem;
-  padding: 1rem 0;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  transition: background 0.3s;
-  border-right: 2px solid rgba(255,255,255,0.1); /* Divisor entre itens */
-}
-
-nav li:last-child a {
-  border-right: none; /* Remove borda do último item */
+  color: var(--dark); /* Cor do texto original */
+  font-weight: 600;
+  font-size: 1.1rem;
+  position: relative;
+  transition: color 0.3s;
 }
 
 nav a:hover {
-  background: var(--primary); /* Vermelho-tijolo no hover */
-  color: white !important;
+  color: var(--primary); /* Vermelho-tijolo no hover */
+}
+
+/* Linha fina no hover (opcional - pode remover) */
+nav a::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--primary);
+  transition: width 0.3s;
+}
+
+nav a:hover::after {
+  width: 100%;
 }
 
 
