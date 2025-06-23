@@ -1,44 +1,57 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <!-- Mesmo estilo da Home -->
-    <style>
-        .cardapio-categoria {
-            margin: 20px;
-            padding: 15px;
-            background-color: white;
-            border-radius: 8px;
-        }
-        .item {
-            display: flex;
-            justify-content: space-between;
-            margin: 10px 0;
-        }
-    </style>
+  <!-- Mesmo head do index.html -->
 </head>
 <body>
-    <!-- Cabeçalho igual ao da Home -->
+  <header>
+    <div class="logo">Amor de Churros</div>
+    <p>Conheça nosso cardápio!</p>
+  </header>
 
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="cardapio.html">Cardápio</a></li>
+    </ul>
+  </nav>
+
+  <main style="padding: 1rem;">
     <div class="cardapio-categoria">
-        <h2>Churros Doces</h2>
-        <div class="item">
-            <span>Tradicional (Doce de Leite)</span>
-            <span>R$ 12,00</span>
-        </div>
-        <div class="item">
-            <span>Churros de Nutella</span>
-            <span>R$ 15,00</span>
-        </div>
+      <h2>Churros Doces</h2>
+      <div class="item">
+        <span>Tradicional (Doce de Leite)</span>
+        <span>R$ 12,00</span>
+      </div>
+      <div class="item">
+        <span>Churros de Nutella</span>
+        <span>R$ 15,00</span>
+      </div>
+      <div class="item">
+        <span>Churros de Brigadeiro</span>
+        <span>R$ 14,00</span>
+      </div>
     </div>
 
     <div class="cardapio-categoria">
-        <h2>Churros Salgados</h2>
-        <div class="item">
-            <span>Churros de Queijo</span>
-            <span>R$ 14,00</span>
-        </div>
+      <h2>Churros Salgados</h2>
+      <div class="item">
+        <span>Churros de Queijo</span>
+        <span>R$ 14,00</span>
+      </div>
+      <div class="item">
+        <span>Churros de Calabresa</span>
+        <span>R$ 16,00</span>
+      </div>
     </div>
 
-    <!-- Rodapé com botão do WhatsApp -->
+    <div class="contato" style="text-align: center; margin-top: 2rem;">
+      <a href="https://wa.me/5511978396269" class="btn btn-whatsapp">Pedir Agora</a>
+    </div>
+  </main>
+
+  <footer>
+    <p>© 2024 Amor de Churros - Aberto das 12h às 20h</p>
+  </footer>
 </body>
 </html>
