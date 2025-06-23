@@ -49,6 +49,38 @@ nav {
   margin: 0 calc(-1 * var(--mobile-padding)); /* Compensação */
   width: calc(100% + 2 * var(--mobile-padding)); /* Compensação */
 }
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 1.5rem; /* Espaço entre botões reduzido */
+  padding: 0.5rem 0; /* Padding vertical */
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.8rem 1.5rem; /* Botões mais largos */
+  border-radius: 50px; /* Bordas arredondadas */
+  background: rgba(255, 255, 255, 0.9); /* Fundo branco semi-transparente */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  transition: all 0.3s ease;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.05); /* Borda fina */
+}
+
+nav a:hover {
+  background: white; /* Fundo sólido no hover */
+  transform: translateY(-2px); /* Efeito de levitar */
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  color: var(--primary); /* Cor primária no hover */
+}
+
+nav a::after {
+  display: none; /* Remove a linha inferior original */
+}
 
 /* Banner - apenas compensação de margem */
 .banner {
@@ -130,5 +162,17 @@ header p {
 @media (max-width: 480px) {
   :root {
     --mobile-padding: 12px; /* Margem menor para telas pequenas */
+  }
+  nav ul {
+    flex-direction: column;
+    gap: 0.8rem;
+    align-items: center;
+  }
+  
+  nav a {
+    padding: 0.6rem 1.2rem;
+    font-size: 1rem;
+    width: 90%; /* Botões ocupam quase toda a largura */
+    text-align: center;
   }
 }
