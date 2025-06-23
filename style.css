@@ -171,7 +171,6 @@ header p {
     --mobile-padding: 12px; /* Margem menor para telas pequenas */
   }
   nav ul {
-    flex-direction: column;
     gap: 0.8rem;
     align-items: center;
   }
