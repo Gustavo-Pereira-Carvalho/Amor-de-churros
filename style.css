@@ -1,18 +1,24 @@
 :root {
-  --primary: #A63A3A;    /* Vermelho-tijolo */
-  --secondary: #D4A59A;  /* Rosa-terra */
-  --accent: #E6C229;     /* Dourado */
-  --dark: #3A2D1E;       /* Marrom-escuro */
-  --light: #F5EDE2;      /* Bege-claro */
-  --text: #333333;       /* Texto escuro */
+  --primary: #A63A3A;
+  --secondary: #D4A59A;
+  --accent: #E6C229;
+  --dark: #3A2D1E;
+  --light: #F5EDE2;
+  --text: #333333;
   --whatsapp: #25D366;
+  --mobile-padding: 1.2rem; /* Margem padrão para mobile */
 }
 
-/* Reset e Base */
+/* Reset Modernizado */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent; /* Remove highlight no mobile */
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
@@ -20,210 +26,129 @@ body {
   background-color: var(--light);
   color: var(--text);
   line-height: 1.7;
+  padding: 0 var(--mobile-padding); /* Margens laterais essenciais */
+  overflow-x: hidden;
 }
 
-/* Tipografia Sofisticada */
+/* Container Principal */
+.main-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+/* Tipografia Responsiva */
 h1, h2, h3 {
   font-family: 'Playfair Display', serif;
   font-weight: 700;
   letter-spacing: 0.5px;
+  margin-bottom: 1.2rem;
 }
 
-/* Header Luxuoso */
+h1 { font-size: clamp(2rem, 5vw, 2.8rem); }
+h2 { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+h3 { font-size: clamp(1.3rem, 3vw, 1.8rem); }
+
+/* Header Ajustado */
 header {
   background: linear-gradient(135deg, var(--primary), var(--dark));
   color: white;
   text-align: center;
-  padding: 2.5rem 0;
+  padding: 2rem var(--mobile-padding);
   position: relative;
-  overflow: hidden;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url('imagens/textura-papel.png') repeat;
-  opacity: 0.1;
-  pointer-events: none;
+  margin: 0 calc(-1 * var(--mobile-padding)); /* Compensa o padding do body */
+  width: calc(100% + 2 * var(--mobile-padding));
 }
 
 .logo {
-  font-size: 2.8rem;
+  font-size: clamp(2rem, 8vw, 2.8rem);
   margin-bottom: 0.5rem;
   text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-  position: relative;
-  display: inline-block;
 }
 
-.logo::after {
-  content: "";
-  display: block;
-  width: 60%;
-  height: 3px;
-  background: var(--accent);
-  margin: 0.5rem auto;
-}
-
-/* Navegação Elegante */
+/* Navegação Otimizada para Mobile */
 nav {
-  background: rgba(255,255,255,0.95);
-  backdrop-filter: blur(5px);
-  padding: 1.2rem;
+  background: rgba(255,255,255,0.97);
+  backdrop-filter: blur(8px);
+  padding: 1rem var(--mobile-padding);
   position: sticky;
   top: 0;
   z-index: 100;
   box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+  margin: 0 calc(-1 * var(--mobile-padding));
+  width: calc(100% + 2 * var(--mobile-padding));
 }
 
 nav ul {
   display: flex;
   justify-content: center;
   list-style: none;
-  gap: 3rem;
+  gap: clamp(1rem, 3vw, 3rem);
+  flex-wrap: wrap;
 }
 
 nav a {
-  text-decoration: none;
-  color: var(--dark);
-  font-weight: 600;
-  font-size: 1.1rem;
-  position: relative;
-  padding-bottom: 5px;
+  font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+  padding: 0.5rem 0;
 }
 
-nav a::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  background: var(--primary);
-  transition: width 0.3s ease;
-}
-
-nav a:hover::after {
-  width: 100%;
-}
-
-/* Banner com Efeito Parallax */
+/* Banner com Margens Controladas */
 .banner {
-  height: 60vh;
-  min-height: 400px;
-  background: url('imagens/banner-churros-artesanal.jpg') center/cover fixed;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  height: clamp(300px, 60vh, 500px);
+  margin: 0 calc(-1 * var(--mobile-padding));
+  width: calc(100% + 2 * var(--mobile-padding));
 }
 
-.banner::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.3);
-}
-
-.banner-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  text-align: center;
-  max-width: 800px;
-  padding: 2rem;
-}
-
-/* Seções com Detalhes Premium */
+/* Seções com Espaçamento Inteligente */
 .section {
-  padding: 4rem 2rem;
-  max-width: 1200px;
-  margin: 0 auto;
+  padding: clamp(2rem, 6vw, 4rem) var(--mobile-padding);
 }
 
-.section-title {
-  text-align: center;
-  margin-bottom: 3rem;
-  position: relative;
-}
-
-.section-title::after {
-  content: "";
-  display: block;
-  width: 100px;
-  height: 4px;
-  background: linear-gradient(to right, var(--primary), var(--accent));
-  margin: 1rem auto;
-  border-radius: 2px;
-}
-
-/* Cardápio Sofisticado */
 .cardapio-categoria {
-  background: white;
-  border-radius: 12px;
-  padding: 2.5rem;
-  margin: 2rem auto;
-  box-shadow: 0 10px 30px rgba(0,0,0,0.05);
-  border: 1px solid rgba(0,0,0,0.03);
-  transition: transform 0.3s, box-shadow 0.3s;
+  padding: clamp(1.5rem, 4vw, 2.5rem);
+  margin: 1.5rem 0;
 }
 
-.cardapio-categoria:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 15px 40px rgba(0,0,0,0.1);
-}
-
-/* Botões com Relevo */
+/* Botões Acessíveis */
 .btn {
-  display: inline-block;
-  padding: 1rem 2.2rem;
-  border-radius: 50px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: all 0.3s;
-  position: relative;
-  overflow: hidden;
-  border: none;
-  cursor: pointer;
+  min-width: 120px; /* Evita botões muito estreitos */
+  padding: clamp(0.8rem, 3vw, 1rem) clamp(1.5rem, 4vw, 2.2rem);
 }
 
-.btn-whatsapp {
-  background: var(--whatsapp);
-  color: white;
-  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.4);
-}
-
-.btn-whatsapp:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.6);
-}
-
-/* Rodapé Minimalista */
+/* Rodapé Ajustado */
 footer {
-  text-align: center;
-  padding: 2.5rem;
-  background: var(--dark);
-  color: white;
-  font-size: 0.9rem;
+  padding: 2rem var(--mobile-padding);
+  margin: 0 calc(-1 * var(--mobile-padding));
+  width: calc(100% + 2 * var(--mobile-padding));
 }
 
-/* Responsivo */
-@media (max-width: 768px) {
-  .logo {
-    font-size: 2rem;
+/* Melhorias para Telas Muito Pequenas */
+@media (max-width: 480px) {
+  :root {
+    --mobile-padding: 0.8rem;
+  }
+  
+  .section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+  
+  .cardapio-categoria {
+    padding: 1.2rem;
   }
   
   nav ul {
-    gap: 1.5rem;
+    gap: 0.8rem;
+  }
+}
+
+/* Ajustes de Toque Final */
+@media (hover: hover) {
+  nav a:hover::after {
+    width: 100%;
   }
   
-  .banner {
-    height: 50vh;
+  .btn:hover {
+    transform: translateY(-3px);
   }
 }
