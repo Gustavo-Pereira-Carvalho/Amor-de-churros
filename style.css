@@ -92,6 +92,40 @@ footer {
   width: calc(100% + 2 * var(--mobile-padding)); /* Compensação */
 }
 
+
+
+
+/* === APENAS OS ELEMENTOS QUE ESTAVAM FALTANDO === */
+
+/* 1. Botão do WhatsApp (adicionar ao final do CSS) */
+.btn-whatsapp {
+  display: inline-block;
+  padding: 1rem 2rem;
+  background-color: var(--whatsapp);
+  color: white;
+  border-radius: 50px;
+  text-decoration: none;
+  font-weight: 600;
+  margin-top: 1rem;
+  box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* 2. Texto do Header (revertendo para o original) */
+.logo {
+  font-size: 2.8rem !important; /* Força o tamanho original */
+  margin-bottom: 0.5rem !important;
+}
+
+header p {
+  font-size: 1.2rem !important; /* Texto secundário original */
+}
+
 /* Responsivo (apenas ajuste de margem para mobile pequeno) */
 @media (max-width: 480px) {
   :root {
