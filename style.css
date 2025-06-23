@@ -1,0 +1,151 @@
+:root {
+  --primary: #FF6B6B;
+  --secondary: #FFA07A;
+  --dark: #5C3A21;
+  --light: #FFF5E6;
+  --whatsapp: #25D366;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: var(--light);
+  color: var(--dark);
+  line-height: 1.6;
+}
+
+/* Header Estilizado */
+header {
+  background: linear-gradient(135deg, var(--primary), var(--secondary));
+  color: white;
+  text-align: center;
+  padding: 1.5rem 0;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.logo {
+  font-size: 2rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+/* Navegação */
+nav {
+  background: white;
+  padding: 1rem;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+nav ul {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  gap: 2rem;
+}
+
+nav a {
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+nav a:hover {
+  color: var(--primary);
+}
+
+/* Banner */
+.banner {
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+}
+
+.banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+}
+
+/* Seção Sobre */
+.sobre {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* Cardápio */
+.cardapio-categoria {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem auto;
+  max-width: 800px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+.cardapio-categoria h2 {
+  color: var(--primary);
+  margin-bottom: 1rem;
+  border-bottom: 2px dashed var(--secondary);
+  padding-bottom: 0.5rem;
+}
+
+.item {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 0;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px dotted #eee;
+}
+
+/* Botões */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  border-radius: 50px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.btn-whatsapp {
+  background-color: var(--whatsapp);
+  color: white;
+  margin: 1rem 0;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.btn-whatsapp:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+/* Rodapé */
+footer {
+  text-align: center;
+  padding: 1.5rem;
+  background: var(--dark);
+  color: white;
+  margin-top: 2rem;
+}
+
+/* Responsivo */
+@media (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    gap: 1rem;
+    align-items: center;
+  }
+  
+  .banner {
+    height: 200px;
+  }
+}
